@@ -75,7 +75,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {t('contractToken')}
+          {contractTitle}
         </Typography>
         <Box
           display={DISPLAY.FLEX}
@@ -97,7 +97,7 @@ export default function ContractDetailsModal({
             >
               {tokenName || ellipsify(tokenAddress)}
             </Typography>
-            {tokenName && (
+            {tokenSymbol && (
               <Typography
                 variant={TYPOGRAPHY.H6}
                 display={DISPLAY.FLEX}
@@ -166,7 +166,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {t('contractRequestingSpendingCap')}
+          {contractRequesting}
         </Typography>
         <Box
           display={DISPLAY.FLEX}

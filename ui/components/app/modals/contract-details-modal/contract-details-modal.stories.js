@@ -8,7 +8,7 @@ export default {
     onClose: {
       action: 'onClose',
     },
-    tokenName: {
+    tokenSymbol: {
       control: {
         type: 'text',
       },
