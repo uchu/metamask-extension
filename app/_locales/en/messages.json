@@ -1552,6 +1552,9 @@
   "gotIt": {
     "message": "Got it!"
   },
+  "gotItModal": {
+    "message": "Got it"
+  },
   "grantedToWithColon": {
     "message": "Granted to:"
   },
