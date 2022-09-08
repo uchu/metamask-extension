@@ -75,7 +75,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {contractTitle}
+          {contractTitle || t('contractToken')}
         </Typography>
         <Box
           display={DISPLAY.FLEX}
@@ -166,7 +166,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {contractRequesting}
+          {contractRequesting || t('contractRequestingSpendingCap')}
         </Typography>
         <Box
           display={DISPLAY.FLEX}
