@@ -650,9 +650,7 @@ export default class ConfirmApproveContent extends Component {
                 onClose={() => this.setState({ setshowContractDetails: false })}
                 tokenSymbol={tokenSymbol}
                 tokenAddress={tokenAddress}
-                siteImage={siteImage}
                 toAddress={toAddress}
-                origin={origin}
                 chainId={chainId}
                 userAddress={userAddress}
                 contractTitle={t('contractNFT')}

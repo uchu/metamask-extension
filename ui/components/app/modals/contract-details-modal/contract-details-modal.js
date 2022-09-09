@@ -102,6 +102,8 @@ export default function ContractDetailsModal({
                 variant={TYPOGRAPHY.H6}
                 display={DISPLAY.FLEX}
                 color={COLORS.TEXT_ALTERNATIVE}
+                marginTop={0}
+                marginBottom={4}
               >
                 {ellipsify(tokenAddress)}
               </Typography>
@@ -204,6 +206,8 @@ export default function ContractDetailsModal({
                 variant={TYPOGRAPHY.H6}
                 display={DISPLAY.FLEX}
                 color={COLORS.TEXT_ALTERNATIVE}
+                marginTop={0}
+                marginBottom={4}
               >
                 {ellipsify(toAddress)}
               </Typography>
