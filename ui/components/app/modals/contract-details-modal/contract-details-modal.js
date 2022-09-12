@@ -44,6 +44,16 @@ export default function ContractDetailsModal({
     data: getAddressBookEntry(state, toAddress),
   }));
 
+  let contractTitle;
+  let contractRequesting;
+  if (isSetApproveForAll) {
+    contractTitle = t('contractNFT');
+    contractRequesting = t('contractRequestingAccess');
+  } else {
+    contractTitle = t('contractToken');
+    contractRequesting = t('contractRequestingSpendingCap');
+  }
+
   return (
     <Popover className="contract-details-modal">
       <Box
@@ -75,7 +85,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {contractTitle || t('contractToken')}
+          {contractTitle}
         </Typography>
         <Box
           display={DISPLAY.FLEX}
@@ -88,6 +98,7 @@ export default function ContractDetailsModal({
             className="contract-details-modal__content__contract__identicon"
             address={tokenAddress}
             diameter={24}
+            address={tokenAddress}
           />
           <Box data-testid="recipient">
             <Typography
@@ -168,7 +179,7 @@ export default function ContractDetailsModal({
           marginTop={4}
           marginBottom={2}
         >
-          {contractRequesting || t('contractRequestingSpendingCap')}
+          {contractRequesting}
         </Typography>
         <Box
           display={DISPLAY.FLEX}

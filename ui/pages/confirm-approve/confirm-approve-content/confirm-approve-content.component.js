@@ -653,8 +653,9 @@ export default class ConfirmApproveContent extends Component {
                 toAddress={toAddress}
                 chainId={chainId}
                 userAddress={userAddress}
-                contractTitle={t('contractNFT')}
-                contractRequesting={t('contractRequestingAccess')}
+                rpcPrefs={rpcPrefs}
+                isContract={isContract}
+                isSetApproveForAll={isSetApproveForAll}
               />
             )}
           </Box>
