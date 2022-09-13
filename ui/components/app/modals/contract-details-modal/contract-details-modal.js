@@ -263,7 +263,7 @@ export default function ContractDetailsModal({
                       null,
                     );
                     global.platform.openTab({
-                      url: blockExplorerTokenLink,
+                      url: blockExplorerToAddress,
                     });
                   }}
                 >

@@ -652,9 +652,7 @@ export default class ConfirmApproveContent extends Component {
                 tokenAddress={tokenAddress}
                 toAddress={toAddress}
                 chainId={chainId}
-                userAddress={userAddress}
                 rpcPrefs={rpcPrefs}
-                isContract={isContract}
                 isSetApproveForAll={isSetApproveForAll}
               />
             )}
