@@ -78,6 +78,27 @@ export default class ConfirmApproveContent extends Component {
     isSetApproveForAll: PropTypes.bool,
     isApprovalOrRejection: PropTypes.bool,
     userAddress: PropTypes.string,
+    collections: PropTypes.shape({
+      collectibles: PropTypes.arrayOf(
+        PropTypes.shape({
+          address: PropTypes.string.isRequired,
+          tokenId: PropTypes.string.isRequired,
+          name: PropTypes.string,
+          description: PropTypes.string,
+          image: PropTypes.string,
+          standard: PropTypes.string,
+          imageThumbnail: PropTypes.string,
+          imagePreview: PropTypes.string,
+          creator: PropTypes.shape({
+            address: PropTypes.string,
+            config: PropTypes.string,
+            profile_img_url: PropTypes.string,
+          }),
+        }),
+      ),
+      collectionImage: PropTypes.string,
+      collectionName: PropTypes.string,
+    }),
   };
 
   state = {
@@ -590,8 +611,10 @@ export default class ConfirmApproveContent extends Component {
       isContract,
       assetStandard,
       userAddress,
-      isSetApproveForAll,
+      tokenId,
       tokenAddress,
+      assetName,
+      collections,
     } = this.props;
     const { showFullTxDetails, setshowContractDetails } = this.state;
 
@@ -636,8 +659,11 @@ export default class ConfirmApproveContent extends Component {
         <div className="confirm-approve-content__description">
           {this.renderDescription()}
         </div>
-        {isSetApproveForAll && (
-          <Box>
+        {(assetStandard === ERC721 ||
+          assetStandard === ERC1155 ||
+          (assetName && tokenId) ||
+          (tokenSymbol && tokenId)) && (
+          <Box marginBottom={4} marginTop={2}>
             <Button
               type="link"
               className="confirm-approve-content__verify-contract-details"
@@ -648,12 +674,15 @@ export default class ConfirmApproveContent extends Component {
             {setshowContractDetails && (
               <ContractDetailsModal
                 onClose={() => this.setState({ setshowContractDetails: false })}
-                tokenSymbol={tokenSymbol}
+                tokenName={tokenSymbol}
                 tokenAddress={tokenAddress}
                 toAddress={toAddress}
                 chainId={chainId}
                 rpcPrefs={rpcPrefs}
-                isSetApproveForAll={isSetApproveForAll}
+                tokenId={tokenId}
+                assetName={assetName}
+                assetStandard={assetStandard}
+                collections={collections}
               />
             )}
           </Box>
