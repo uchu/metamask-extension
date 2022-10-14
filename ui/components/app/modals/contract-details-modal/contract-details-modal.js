@@ -69,15 +69,15 @@ export default function ContractDetailsModal({
   const tokenList = useSelector(getTokenList);
 
   const nftTokenListImage = tokenList[tokenAddress.toLowerCase()]?.iconUrl;
-  const collectionsKeys = Object.keys(collections);
-  const nftCollectionName = collectionsKeys.map((key) => {
-    const { collectionName } = collections[key];
-    return collectionName;
-  });
 
-  const nftCollectionImage = collectionsKeys.map((key) => {
-    const { collectionImage } = collections[key];
-    return collectionImage;
+  let nftCollectionNameExist;
+  let nftCollectionImageExist;
+
+  Object.values(collections).forEach((nftCollections) => {
+    if (nftCollections.collectionName === assetName) {
+      nftCollectionNameExist = nftCollections.collectionName;
+      nftCollectionImageExist = nftCollections.collectionImage;
+    }
   });
 
   const renderCollectionImage = (collectionImage, collectionName, key) => {
@@ -144,9 +144,11 @@ export default function ContractDetailsModal({
         >
           {nft ? (
             <>
-              {Object.keys(collections).length > 0 &&
-              nftCollectionName === assetName
-                ? renderCollectionImage(nftCollectionName, nftCollectionImage)
+              {Object.keys(collections).length > 0 && nftCollectionNameExist
+                ? renderCollectionImage(
+                    nftCollectionImageExist,
+                    nftCollectionNameExist,
+                  )
                 : renderCollectionImage(nftTokenListImage, assetName)}
             </>
           ) : (
