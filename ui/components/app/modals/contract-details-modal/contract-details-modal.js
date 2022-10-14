@@ -68,25 +68,25 @@ export default function ContractDetailsModal({
 
   const tokenList = useSelector(getTokenList);
 
-  const nftCollectionImage = tokenList[tokenAddress.toLowerCase()]?.iconUrl;
+  const nftTokenListImage = tokenList[tokenAddress.toLowerCase()]?.iconUrl;
   const collectionsKeys = Object.keys(collections);
-  const collectionName = collectionsKeys.map((key) => {
-    const { nameCollection } = collections[key];
-    return nameCollection;
+  const nftCollectionName = collectionsKeys.map((key) => {
+    const { collectionName } = collections[key];
+    return collectionName;
   });
 
-  const collectionImage = collectionsKeys.map((key) => {
-    const { imageCollection } = collections[key];
-    return imageCollection;
+  const nftCollectionImage = collectionsKeys.map((key) => {
+    const { collectionImage } = collections[key];
+    return collectionImage;
   });
 
-  const renderCollectionImage = (imageCollection, nameCollection, key) => {
-    if (imageCollection) {
+  const renderCollectionImage = (collectionImage, collectionName, key) => {
+    if (collectionImage) {
       return (
         <Identicon
           className="contract-details-modal__content__contract__identicon"
           diameter={24}
-          image={imageCollection}
+          image={collectionImage}
         />
       );
     }
@@ -97,7 +97,7 @@ export default function ContractDetailsModal({
         textAlign={TEXT_ALIGN.CENTER}
         className="contract-details-modal__content__contract__collection"
       >
-        {nameCollection?.[0]?.toUpperCase() ?? null}
+        {collectionName?.[0]?.toUpperCase() ?? null}
       </Box>
     );
   };
@@ -145,9 +145,9 @@ export default function ContractDetailsModal({
           {nft ? (
             <>
               {Object.keys(collections).length > 0 &&
-              collectionName === assetName
-                ? renderCollectionImage(collectionName, collectionImage)
-                : renderCollectionImage(nftCollectionImage, assetName)}
+              nftCollectionName === assetName
+                ? renderCollectionImage(nftCollectionName, nftCollectionImage)
+                : renderCollectionImage(nftTokenListImage, assetName)}
             </>
           ) : (
             <Identicon
