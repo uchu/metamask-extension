@@ -13,7 +13,7 @@ export const currentNetworkTxListSample = {
     "gas": "0xea60",
     "gasPrice": "0x4a817c800"
   },
-  "origin": "https://metamask.github.io",
+  "origin": "null",
   "type": "approve",
   "history": [
     {
@@ -31,7 +31,7 @@ export const currentNetworkTxListSample = {
         "gas": "0xea60",
         "gasPrice": "0x4a817c800"
       },
-      "origin": "https://metamask.github.io",
+      "origin": "null",
       "type": "approve"
     },
     [
@@ -47,10 +47,10 @@ export const currentNetworkTxListSample = {
 }
 
 export const subjectMetadata = {
-  "https://metamask.github.io": {
-    "origin": "https://metamask.github.io",
-    "name": "E2E Test Dapp",
-    "iconUrl": "https://metamask.github.io/test-dapp/metamask-fox.svg",
-    "subjectType": "website"
-  }
+  // "https://metamask.github.io": {
+  //   "origin": "null",
+  //   "name": "E2E Test Dapp",
+  //   "iconUrl": "https://metamask.github.io/test-dapp/metamask-fox.svg",
+  //   "subjectType": "website"
+  // }
 }

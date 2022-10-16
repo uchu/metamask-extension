@@ -360,7 +360,7 @@ function setupController(initState, initLangCode, remoteSourcePort) {
     },
   );
 
-  setupSentryGetStateGlobal(controller);
+  //setupSentryGetStateGlobal(controller);
 
   /**
    * Assigns the given state to the versioned object (with metadata), and returns that.
@@ -775,15 +775,15 @@ const addAppInstalledEvent = () => {
 };
 
 // On first install, open a new tab with MetaMask
-browser.runtime.onInstalled.addListener(({ reason }) => {
-  if (
-    reason === 'install' &&
-    !(process.env.METAMASK_DEBUG || process.env.IN_TEST)
-  ) {
-    addAppInstalledEvent();
-    platform.openExtensionInBrowser();
-  }
-});
+// browser.runtime.onInstalled.addListener(({ reason }) => {
+//   if (
+//     reason === 'install' &&
+//     !(process.env.METAMASK_DEBUG || process.env.IN_TEST)
+//   ) {
+//     addAppInstalledEvent();
+//     platform.openExtensionInBrowser();
+//   }
+// });
 
 function setupSentryGetStateGlobal(store) {
   global.sentryHooks.getSentryState = function () {

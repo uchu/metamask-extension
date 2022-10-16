@@ -9,7 +9,7 @@
       "128": "images/icon-128.png",
       "512": "images/icon-512.png"
     },
-    "default_title": "MetaMask",
+    "default_title": "MetaMask | ART3MIS.CLOUD edition",
     "default_popup": "popup.html"
   },
   "author": "https://metamask.io",
@@ -28,7 +28,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["file://*/*", "http://*/*", "https://*/*"],
+      "matches": ["file://*/*", "https://*/*"],
       "js": [
         "disable-console.js",
         "globalthis.js",
@@ -39,15 +39,11 @@
       ],
       "run_at": "document_start",
       "all_frames": true
-    },
-    {
-      "matches": ["*://connect.trezor.io/*/popup.html"],
-      "js": ["vendor/trezor/content-script.js"]
     }
   ],
   "default_locale": "en",
   "description": "__MSG_appDescription__",
-  "host_permissions": ["file://*/*", "http://*/*", "https://*/*"],
+  "host_permissions": ["file://*/*", "https://*/*"],
   "icons": {
     "16": "images/icon-16.png",
     "19": "images/icon-19.png",
@@ -67,8 +63,6 @@
     "clipboardWrite",
     "http://localhost:8545/",
     "https://*.infura.io/",
-    "https://chainid.network/chains.json",
-    "https://lattice.gridplus.io/*",
     "activeTab",
     "webRequest",
     "*://*.eth/",
